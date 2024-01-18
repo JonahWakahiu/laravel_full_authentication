@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap");
+
+// css variables
+$clr_main: hsl(247, 34%, 40%);
+$clr_white: hsl(0, 0%, 100%);
+$clr_container: hsl(0, 0%, 93%);
+$clr_border: hsl(0, 0%, 87%);
+$clr_text: hsl(0, 0%, 30%);
+$clr_text_title: hsl(0, 0%, 40%);
+
+$fnw_300: 300;
+$fnw_400: 400;
+$fnw_500: 500;
+$fnw_600: 600;
+$fnw_700: 700;
+$fnw_800: 800;
+
+$fnf_primary: "Open Sans", sans-serif;
+$fnf_secondary: "Poppins", sans-serif;
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+    height: 100vh;
+}
+body {
+    letter-spacing: 0.7px;
+}
+
+// all buttons
+.btn {
+    color: $clr_white;
+    background: $clr_main;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 12px;
+    font: {
+        family: $fnf_secondary;
+    }
+
+    &:hover {
+        background: hsl(247, 34%, 55%);
+    }
+}
+
+// styles for login register and email verification
+.guest_layout {
+    background: $clr_main;
+    height: 100vh;
+    color: $clr_text;
+    display: grid;
+    place-items: center;
+
+    article {
+        width: 360px;
+        max-width: 360px;
+        background-color: $clr_container;
+        padding: 34px 34px 0;
+        border-radius: 14px 0 10px 0;
+
+        .form {
+            // form header
+            &_title {
+                color: $clr_text_title;
+                font: {
+                    family: $fnf_secondary;
+                    size: 24px;
+                    weight: $fnw_700;
+                }
+                text: {
+                    align: center;
+                    transform: uppercase;
+                }
+            }
+
+            // style the divider
+            &_divider {
+                border-bottom: 2px solid hsl(120, 50%, 50%);
+                width: 60%;
+                margin-inline: auto;
+                margin-block: 0px 10px;
+            }
+
+            div {
+                margin-block: 10px;
+
+                .form_password {
+                    margin-top: 0;
+                    display: flex;
+                    border: 1px solid transparent;
+                    background-color: $clr_white;
+                    border-radius: 4px;
+                    height: 34px;
+
+                    svg {
+                        align-self: center;
+                        font-size: 19px;
+                        margin-inline: 2px 4px;
+                    }
+
+                    .form_control {
+                        height: 100%;
+                        &:hover,
+                        &:focus {
+                            border: 1px solid transparent;
+                        }
+                    }
+                    &:focus-within,
+                    &:hover {
+                        border: 1px solid $clr_main;
+                    }
+                }
+            }
+
+            &_label,
+            &_control {
+                display: block;
+                width: 100%;
+            }
+            &_label {
+                margin-bottom: 5px;
+            }
+
+            &_control {
+                padding: 6px;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                outline: none;
+                color: $clr_text;
+                height: 34px;
+
+                &:hover,
+                &:focus {
+                    border: 1px solid $clr_main;
+                }
+            }
+
+            &_error {
+                color: #ff4040;
+                margin-top: 5px;
+                font: {
+                    size: 14px;
+                }
+            }
+
+            &_actions {
+                margin-block-start: 20px !important;
+                display: flex;
+                gap: 10px;
+                justify-content: flex-end;
+                align-items: baseline;
+
+                a {
+                    color: $clr_main;
+
+                    &:hover {
+                        color: hsl(247, 34%, 55%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// verify email page
+
+.email_container {
+    background-color: $clr_main;
+    color: $clr_text;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+    .email_verification {
+        width: 450px;
+        max-width: 450px;
+        padding: 20px 20px 10px;
+        background: $clr_container;
+        border-radius: 10px;
+
+        &-title {
+            font-size: 22px;
+            text: {
+                transform: uppercase;
+                align: center;
+            }
+        }
+        &-desc {
+            margin-block: 5px 10px;
+            font: {
+                size: 13px;
+                weight: $fnw_400;
+                family: $fnf_secondary;
+            }
+        }
+        &-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            a {
+                color: $clr_main;
+
+                &:hover {
+                    color: hsl(247, 34%, 55%);
+                }
+            }
+        }
+    }
+}
+
+.authenticated_layout {
+    display: grid;
+    grid-template-columns: 1fr 5.67fr;
+    height: 100vh;
+
+    .sidebar {
+        background: $clr_main;
+        color: $clr_white;
+    }
+    article {
+        .navbar {
+            height: 50px;
+            background: $clr_container;
+        }
+    }
+}
