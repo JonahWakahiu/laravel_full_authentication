@@ -201,6 +201,15 @@ body {
                 family: $fnf_secondary;
             }
         }
+
+        &-alert {
+            margin-block: 10px;
+            color: hsl(120, 50%, 50%);
+            font: {
+                family: $fnf_secondary;
+                size: 14px;
+            }
+        }
         &-actions {
             display: flex;
             justify-content: space-between;
